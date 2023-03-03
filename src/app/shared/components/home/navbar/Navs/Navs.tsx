@@ -1,6 +1,6 @@
 import { Component, ReactElement } from "react";
-import { NavsInterface } from "../../interfaces/navs/navs.interface";
-import Link from "../../utils/Link";
+import { NavsInterface } from "../../../../interfaces/navs/navs.interface";
+import Link from "../../../../utils/Link";
 import "./Navs.css";
 
 export class Navs extends Component<NavsInterface> {

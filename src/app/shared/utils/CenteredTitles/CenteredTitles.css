@@ -1,0 +1,17 @@
+.centered-div {
+    padding: 30px 0px;
+}
+
+
+.big-centered-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #000;
+}
+
+.sub-centered-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+}

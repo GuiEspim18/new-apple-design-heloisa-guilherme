@@ -1,6 +1,6 @@
 import { Component, ReactElement } from "react";
-import { BannerInterface } from "../../interfaces/banner/banner.interface";
-import TextAndButtons from "../../utils/Text-and-buttons";
+import { BannerInterface } from "../../../interfaces/banner/banner.interface";
+import TextAndButtons from "../../../utils/TextAndButtons";
 import "./Banner.css";
 
 export class Banner extends Component<BannerInterface> {

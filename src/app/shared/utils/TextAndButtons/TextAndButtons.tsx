@@ -1,8 +1,8 @@
 import { Component, ReactElement } from "react";
-import { TextAndButtonInterface } from "../../interfaces/text-and-folder/text-and-folder";
+import { TextAndButtonInterface } from "../../interfaces/text-and-button/text-and-button.interface";
 import Button from "../Button";
 import Link from "../Link";
-import "./Text-and-buttons.css"
+import "./TextAndButtons.css"
 
 export class TextAndButtons extends Component<TextAndButtonInterface> {
 
@@ -14,8 +14,8 @@ export class TextAndButtons extends Component<TextAndButtonInterface> {
     public render(): ReactElement<any> {
         return (
             <div className="text-div">
-                {(this.props.littleTitle && this.props.littleTitle) && <h4>{this.props.littleTitle}</h4>}
-                {(this.props.title && this.props.title.length > 0) && <h1 className="big-title">{this.props.title}</h1>}
+                <h4>{this.props.littleTitle}</h4>
+                <h1 className="big-title">{this.props.title}</h1>
                 {(this.props.list && this.props.list.length > 0) && <ul>
                     {this.props.list.map((element: any) =>
                         <li key={element}>

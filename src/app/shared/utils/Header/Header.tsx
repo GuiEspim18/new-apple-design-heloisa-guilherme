@@ -1,5 +1,5 @@
 import { Component, ReactElement } from "react";
-import Navs from "../../components/Navs";
+import Navs from "../../components/home/navbar/Navs";
 import { HeaderInterface } from "../../interfaces/header/header.interface";
 import IconButton from "../IconButton";
 import "./Header.css";

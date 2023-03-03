@@ -1,0 +1,11 @@
+.image-section{
+    height: 500px;
+    margin: 50px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-section .container .text-div {
+    max-width: 560px;
+}

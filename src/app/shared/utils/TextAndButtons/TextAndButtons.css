@@ -7,6 +7,10 @@ h1 {
     white-space: break-spaces;
 }
 
+.text-div {
+    max-width: 60%;
+}
+
 .big-title {
     color: #fff;
     font-size: 3rem;
