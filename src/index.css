@@ -74,3 +74,17 @@ code {
   -moz-user-select:none;
   user-select:none;
 } 
+
+/* Link */
+
+.link {
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+}
+
+.link:hover {
+  border-bottom: solid 1px #fff;
+}

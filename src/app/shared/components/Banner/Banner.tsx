@@ -1,6 +1,6 @@
 import { Component, ReactElement } from "react";
 import { BannerInterface } from "../../interfaces/banner/banner.interface";
-import Button from "../../utils/Button";
+import TextAndButtons from "../../utils/Text-and-buttons";
 import "./Banner.css";
 
 export class Banner extends Component<BannerInterface> {
@@ -16,6 +16,10 @@ export class Banner extends Component<BannerInterface> {
         "Nova câmera grande-angular e processaento de imagem aprimorado para fotos."
     ]
 
+    private readonly title: string = "iphone 14 &\niphone 14 plus ";
+
+    private readonly littleTitle: string = "O aparelho";
+
 
     constructor(props: BannerInterface) {
         super(props)
@@ -27,20 +31,7 @@ export class Banner extends Component<BannerInterface> {
         return (
             <section className="banner" style={this.backgroundImage}>
                 <div className="container">
-                    <div className="text-div">
-                        <h4>O aparelho</h4>
-                        <h1 className="big-title">iphone 14 & <br />
-                            iphone 14 plus </h1>
-                        <ul>
-                            {this.list.map(element => <li>
-                                <p>{element}</p>
-                            </li>)}
-                        </ul>
-                        <div className="buttons-div">
-                            <Button text="Comprar agora" expClass="blue-button" />
-                            <Button text="Ler mais >>>" expClass="arrow-button" />
-                        </div>
-                    </div>
+                    <TextAndButtons littleTitle={this.littleTitle} title={this.title} list={this.list} />
                 </div>
             </section>
         );

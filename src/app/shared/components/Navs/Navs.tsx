@@ -1,6 +1,6 @@
 import { Component, ReactElement } from "react";
 import { NavsInterface } from "../../interfaces/navs/navs.interface";
-import Button from "../../utils/Button";
+import Link from "../../utils/Link";
 import "./Navs.css";
 
 export class Navs extends Component<NavsInterface> {
@@ -13,7 +13,7 @@ export class Navs extends Component<NavsInterface> {
     public render(): ReactElement<any> {
         return(
             <ul className="nav-list">
-                {this.props.navs ? this.props.navs.map(element => <li key={element.name}><Button text={element.name} /></li>):''}
+                {this.props.navs ? this.props.navs.map(element => <li key={element.name}><Link text={element.name} /></li>):''}
             </ul>
         );
     }
