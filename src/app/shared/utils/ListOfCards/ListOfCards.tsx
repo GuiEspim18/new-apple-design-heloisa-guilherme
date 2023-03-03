@@ -1,14 +1,13 @@
 import { Component, ReactElement } from "react";
+import { ListOfCardsInterface } from "../../interfaces/list-od-cards/list-of-cards.interface";
 import SimpleCard from "../SimpleCard";
-import { cards } from "../variables/cards/cards";
 import { CardsInterface } from "../variables/cards/interface/cards.interface";
 import "./ListOfCards.css";
 
-export class ListOfCards extends Component<any> {
+export class ListOfCards extends Component<ListOfCardsInterface> {
 
-    private readonly cards: Array<CardsInterface> = cards
 
-    constructor (props: any) {
+    constructor (props: ListOfCardsInterface) {
         super(props)
         this.state = {}
     }
@@ -16,7 +15,7 @@ export class ListOfCards extends Component<any> {
     public render(): ReactElement<any> {
         return (
             <div className="list-of-cards">
-                {this.cards.map((element: CardsInterface) => <SimpleCard src={element.src} text={element.text} />)}
+                {this.props.cards.map((element: CardsInterface) => <SimpleCard src={element.src} text={element.text} />)}
             </div>
         );
     }

@@ -3,4 +3,5 @@ import { TextAndButtonInterface } from "../text-and-button/text-and-button.inter
 export interface ImageSectionInterface extends TextAndButtonInterface  {
     src?: string;
     direction?: string;
+    height?: string;
 }

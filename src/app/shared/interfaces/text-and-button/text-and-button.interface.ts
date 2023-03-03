@@ -3,4 +3,5 @@ export interface TextAndButtonInterface {
     littleTitle?: string;
     list?: Array<string>;
     text?: string;
+    color?: string;
 }

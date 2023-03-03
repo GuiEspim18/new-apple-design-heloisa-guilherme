@@ -14,6 +14,7 @@
 
 .simple-card:hover {
     transform: scale(1.03);
+    box-shadow: 4px 8px 12px #0000003e;
 }
 
 .simple-card p {

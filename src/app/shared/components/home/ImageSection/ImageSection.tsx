@@ -7,8 +7,12 @@ export class ImageSection extends Component<ImageSectionInterface> {
 
     private readonly backgroundImage: CSSProperties = {
         'backgroundImage': `url(${this.props.src})`,
-        'flexDirection': this.props.direction && this.props.direction.length > 0 ? this.props.direction : ('start' as any)
-    } 
+        'height': this.props.height && this.props.height.length > 0 ? this.props.height : "500px"
+    }
+    
+    private readonly flexDirection: CSSProperties = {
+        'flexDirection': this.props.direction && this.props.direction.length > 0 ? this.props.direction : ('row' as any)
+    }
 
 
     constructor(props: ImageSectionInterface) {
@@ -20,8 +24,8 @@ export class ImageSection extends Component<ImageSectionInterface> {
     public render(): ReactElement<any> {
         return (
             <section className="image-section" style={this.backgroundImage}>
-                <div className="container">
-                    <TextAndButtons title={this.props.title} text={this.props.text} list={this.props.list} littleTitle={this.props.littleTitle} />
+                <div className="container" style={this.flexDirection}>
+                    <TextAndButtons title={this.props.title} text={this.props.text} list={this.props.list} littleTitle={this.props.littleTitle} color={this.props.color}  />
                 </div>
             </section>
         );
