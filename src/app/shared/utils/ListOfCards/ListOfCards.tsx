@@ -15,7 +15,7 @@ export class ListOfCards extends Component<ListOfCardsInterface> {
     public render(): ReactElement<any> {
         return (
             <div className="list-of-cards">
-                {this.props.cards.map((element: CardsInterface) => <SimpleCard src={element.src} text={element.text} />)}
+                {this.props.cards.map((element: CardsInterface) => <SimpleCard key={element.src} src={element.src} text={element.text} />)}
             </div>
         );
     }
