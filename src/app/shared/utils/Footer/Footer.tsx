@@ -31,7 +31,7 @@ export class Footer extends Component<any> {
                     </div>
                     <div className="footer-list">
                         <ul>
-                            {this.footerList.map((element: string) => <li>
+                            {this.footerList.map((element: string) => <li key={element}>
                                 <Link text={element} color="#000" />
                             </li>)}
                         </ul>
