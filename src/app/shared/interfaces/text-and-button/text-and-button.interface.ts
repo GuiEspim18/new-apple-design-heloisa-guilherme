@@ -4,4 +4,6 @@ export interface TextAndButtonInterface {
     list?: Array<string>;
     text?: string;
     color?: string;
+    button?: boolean;
+    link?: boolean;
 }

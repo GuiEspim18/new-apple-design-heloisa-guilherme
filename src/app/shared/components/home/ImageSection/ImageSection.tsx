@@ -25,7 +25,7 @@ export class ImageSection extends Component<ImageSectionInterface> {
         return (
             <section className="image-section" style={this.backgroundImage}>
                 <div className="container" style={this.flexDirection}>
-                    <TextAndButtons title={this.props.title} text={this.props.text} list={this.props.list} littleTitle={this.props.littleTitle} color={this.props.color}  />
+                    <TextAndButtons title={this.props.title} text={this.props.text} list={this.props.list} littleTitle={this.props.littleTitle} color={this.props.color} button={this.props.button} link={this.props.link} />
                 </div>
             </section>
         );

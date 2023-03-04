@@ -30,8 +30,8 @@ export class TextAndButtons extends Component<TextAndButtonInterface> {
                 </ul>}
                 {(this.props.text && this.props.text.length > 0) && <p style={this.color}>{this.props.text}</p>}
                 <div className="buttons-div">
-                    <Button text="Comprar agora" expClass="blue-button" />
-                    <Link color={this.props.color} text="Ler mais >>>" />
+                    {(this.props.button === undefined || this.props.button === true ) && <Button text="Comprar agora" expClass="blue-button" />}
+                    {(this.props.link === undefined  || this.props.link === true) && <Link color={this.props.color} text="Ler mais >>>" />}
                 </div>
             </div>
         );

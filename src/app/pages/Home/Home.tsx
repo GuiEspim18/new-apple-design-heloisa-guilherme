@@ -14,13 +14,13 @@ export class Home extends Component {
 
     private readonly subTitle: string = "A cara do iPhone vai ficar a sua cara com a nova Tela Bloqueada do iOS 16.";
 
-    private readonly imageSection1: ImageSectionInterface =  {
+    private readonly imageSection1: ImageSectionInterface = {
         title: "iphone e meio ambiente",
         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
         src: "/images/background1.svg"
     }
 
-    private readonly imageSection2: ImageSectionInterface =  {
+    private readonly imageSection2: ImageSectionInterface = {
         title: "iphone 14 &\niphone 14 plus",
         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
         src: "/images/background2.svg",
@@ -29,12 +29,22 @@ export class Home extends Component {
         height: "620px"
     }
 
-    private readonly imageSection3: ImageSectionInterface =  {
+    private readonly imageSection3: ImageSectionInterface = {
         title: "Disponível em 5\nincriveis cores",
         text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
         src: "/images/background3.svg",
         color: "#000000",
         height: "570px"
+    }
+
+    private readonly imageSection4: ImageSectionInterface = {
+        title: "iphone 14 &\niphone 14 plus",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        src: "/images/background4.svg",
+        direction: "row-reverse",
+        color: "#000000",
+        height: "400px",
+        button: false
     }
 
     private readonly cards: Array<CardsInterface> = cards
@@ -58,6 +68,11 @@ export class Home extends Component {
                 <ImageSection src={this.imageSection1.src} title={this.imageSection1.title} text={this.imageSection1.text} />
                 <ImageSection src={this.imageSection2.src} title={this.imageSection2.title} text={this.imageSection2.text} direction={this.imageSection2.direction} color={this.imageSection2.color} height={this.imageSection2.height} />
                 <ImageSection src={this.imageSection3.src} title={this.imageSection3.title} text={this.imageSection3.text} color={this.imageSection3.color} height={this.imageSection3.height} />
+                <section className="container">
+                    <div className="holder">
+                        <ImageSection src={this.imageSection4.src} title={this.imageSection4.title} text={this.imageSection4.text} direction={this.imageSection4.direction} height={this.imageSection4.height} button={this.imageSection4.button} />
+                    </div>
+                </section>
             </Fragment>
         );
     }
