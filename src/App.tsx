@@ -1,6 +1,7 @@
 import { Component, Fragment } from "react";
 // import Home from "./app/pages/Home";
 import Routes from "./app/Routes";
+import Footer from "./app/shared/utils/Footer";
 import Header from "./app/shared/utils/Header";
 import { icons } from "./app/shared/utils/variables/icons/icons";
 import { NavLinksInterface } from "./app/shared/utils/variables/nav-links/interface/nav-links.interface";
@@ -26,6 +27,7 @@ class App extends Component {
         <div className="app">
           <Routes />
         </div>
+        <Footer />
       </Fragment>
     );
   }
