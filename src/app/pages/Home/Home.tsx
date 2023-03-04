@@ -9,6 +9,7 @@ import { CardsInterface } from "../../shared/utils/variables/cards/interface/car
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./Home.css"
+import Divider from "../../shared/utils/Divider";
 
 export class Home extends Component {
 
@@ -59,6 +60,9 @@ export class Home extends Component {
 
 
     public componentDidMount(): void {
+        window.onbeforeunload = () => {
+            window.scrollTo(0, 0)
+        }
         Aos.init({
             duration: 2000
         })
@@ -72,6 +76,7 @@ export class Home extends Component {
                 <section className="container">
                     <div>
                         <CenteredTitles title={this.title} subTitle={this.subTitle} />
+                        <Divider color="#dcdcdc" />
                         <ListOfCards cards={this.cards} />
                     </div>
                 </section>

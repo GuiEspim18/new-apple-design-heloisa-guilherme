@@ -4,6 +4,13 @@ footer {
     width: 100%;
     margin-top: 50px;
 }
+footer .container {
+    flex-wrap: wrap;
+}
+
+footer .container .divider-div {
+    width: 100%;
+}
 
 footer .container .image-and-text img {
     filter: invert(100%);

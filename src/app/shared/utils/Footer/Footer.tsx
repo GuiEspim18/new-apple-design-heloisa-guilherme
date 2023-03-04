@@ -1,4 +1,5 @@
 import { Component, ReactElement } from "react";
+import Divider from "../Divider";
 import IconButton from "../IconButton";
 import Link from "../Link";
 import { footerList } from "../variables/footer-list/footerlist";
@@ -34,6 +35,9 @@ export class Footer extends Component<any> {
                                 <Link text={element} color="#000" />
                             </li>)}
                         </ul>
+                    </div>
+                    <div className="divider-div">
+                        <Divider />
                     </div>
                 </div>
             </footer>
