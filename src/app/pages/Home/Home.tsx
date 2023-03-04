@@ -6,7 +6,9 @@ import CenteredTitles from "../../shared/utils/CenteredTitles";
 import ListOfCards from "../../shared/utils/ListOfCards";
 import { cards } from "../../shared/utils/variables/cards/cards";
 import { CardsInterface } from "../../shared/utils/variables/cards/interface/cards.interface";
-import "./Home.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import "./Home.css"
 
 export class Home extends Component {
 
@@ -49,9 +51,17 @@ export class Home extends Component {
 
     private readonly cards: Array<CardsInterface> = cards
 
+
     constructor(props: any) {
         super(props)
         this.state = {}
+    }
+
+
+    public componentDidMount(): void {
+        Aos.init({
+            duration: 2000
+        })
     }
 
 
@@ -65,10 +75,16 @@ export class Home extends Component {
                         <ListOfCards cards={this.cards} />
                     </div>
                 </section>
-                <ImageSection src={this.imageSection1.src} title={this.imageSection1.title} text={this.imageSection1.text} />
-                <ImageSection src={this.imageSection2.src} title={this.imageSection2.title} text={this.imageSection2.text} direction={this.imageSection2.direction} color={this.imageSection2.color} height={this.imageSection2.height} />
-                <ImageSection src={this.imageSection3.src} title={this.imageSection3.title} text={this.imageSection3.text} color={this.imageSection3.color} height={this.imageSection3.height} />
-                <section className="container">
+                <div data-aos="fade-up" data-aos-once="true">
+                    <ImageSection data-aos="fade-up" src={this.imageSection1.src} title={this.imageSection1.title} text={this.imageSection1.text} />
+                </div>
+                <div data-aos="fade-right" data-aos-once="true">
+                    <ImageSection src={this.imageSection2.src} title={this.imageSection2.title} text={this.imageSection2.text} direction={this.imageSection2.direction} color={this.imageSection2.color} height={this.imageSection2.height} />
+                </div>
+                <div data-aos="fade-left" data-aos-once="true">
+                    <ImageSection src={this.imageSection3.src} title={this.imageSection3.title} text={this.imageSection3.text} color={this.imageSection3.color} height={this.imageSection3.height} />
+                </div>
+                <section className="container" data-aos="flip-left" data-aos-once="true">
                     <div className="holder">
                         <ImageSection src={this.imageSection4.src} title={this.imageSection4.title} text={this.imageSection4.text} direction={this.imageSection4.direction} height={this.imageSection4.height} button={this.imageSection4.button} />
                     </div>
