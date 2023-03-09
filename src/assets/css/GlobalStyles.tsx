@@ -1,5 +1,5 @@
 import styled, { css, createGlobalStyle } from "styled-components";
-import { darkLightBlue, lightBlue, opacityWhite, primaryColor } from "../main/main";
+import { darkLightBlue, light_blue, opacityWhite, primaryColor } from "../main/main";
 
 export const Global = createGlobalStyle`
     body {
@@ -44,7 +44,7 @@ export const StyledButton = styled.button`
 export const BlueButton = styled(StyledButton)`
     padding: 5px 20px !important;
     box-sizing: unset !important;
-    background: ${lightBlue};
+    background: ${light_blue};
     transition: 0.3s;
     min-width: 150px;
     text-align: center;

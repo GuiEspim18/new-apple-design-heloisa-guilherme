@@ -1,5 +1,5 @@
 export const primaryColor: string = "#fff";
-export const lightBlue: string = "#2870FF";
+export const light_blue: string = "#2870FF";
 export const darkLightBlue: string = "#1a67ff";
 export const opacityWhite: string = "#ffffff3b";
 export const secondaryColor: string = "#dcdcdc";
