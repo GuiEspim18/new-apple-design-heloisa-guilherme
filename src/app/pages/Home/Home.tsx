@@ -8,8 +8,18 @@ import { cards } from "../../shared/utils/variables/cards/cards";
 import { CardsInterface } from "../../shared/utils/variables/cards/interface/cards.interface";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import "./Home.css"
 import Divider from "../../shared/utils/Divider";
+import { Container } from "../../../assets/css/GlobalStyles";
+import styled from "styled-components";
+
+const StyledContainer: any = styled(Container)`
+    .holder {
+        width: 100%;
+        margin-top: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+`;
 
 export class Home extends Component {
 
@@ -73,13 +83,13 @@ export class Home extends Component {
         return (
             <Fragment>
                 <Banner />
-                <section className="container">
+                <Container>
                     <div>
                         <CenteredTitles title={this.title} subTitle={this.subTitle} />
                         <Divider color="#dcdcdc" />
                         <ListOfCards cards={this.cards} />
                     </div>
-                </section>
+                </Container>
                 <div data-aos="fade-up" data-aos-once="true">
                     <ImageSection data-aos="fade-up" src={this.imageSection1.src} title={this.imageSection1.title} text={this.imageSection1.text} />
                 </div>
@@ -89,11 +99,11 @@ export class Home extends Component {
                 <div data-aos="fade-left" data-aos-once="true">
                     <ImageSection src={this.imageSection3.src} title={this.imageSection3.title} text={this.imageSection3.text} color={this.imageSection3.color} height={this.imageSection3.height} />
                 </div>
-                <section className="container" data-aos="flip-left" data-aos-once="true">
+                <StyledContainer data-aos="flip-left" data-aos-once="true">
                     <div className="holder">
                         <ImageSection src={this.imageSection4.src} title={this.imageSection4.title} text={this.imageSection4.text} direction={this.imageSection4.direction} height={this.imageSection4.height} button={this.imageSection4.button} />
                     </div>
-                </section>
+                </StyledContainer>
             </Fragment>
         );
     }

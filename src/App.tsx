@@ -6,6 +6,7 @@ import Header from "./app/shared/utils/Header";
 import { icons } from "./app/shared/utils/variables/icons/icons";
 import { NavLinksInterface } from "./app/shared/utils/variables/nav-links/interface/nav-links.interface";
 import { nav_links } from "./app/shared/utils/variables/nav-links/nav-links";
+import { Global } from "./assets/css/GlobalStyles";
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Global />
         <Header navs={this.navLinks} icons={this.icons} />
         <div className="app">
           <Routes />

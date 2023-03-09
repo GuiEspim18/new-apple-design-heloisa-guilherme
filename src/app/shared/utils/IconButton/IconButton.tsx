@@ -1,12 +1,23 @@
-import { Component, CSSProperties } from "react";
+import { Component, CSSProperties, Fragment } from "react";
 import Ripples from "react-ripples";
+import styled, { createGlobalStyle } from "styled-components";
+import { noCopy, StyledIconButton } from "../../../../assets/css/GlobalStyles";
 import { IconButtonInterface } from "../../interfaces/icon-button/icon-button.interface";
-import "./IconButton.css";
+
+const NoCopyIconButton: any = styled(StyledIconButton)`
+    ${noCopy}
+`;
+
+const Global: any = createGlobalStyle`
+    .react-ripples {
+        border-radius: 40px;
+    }
+`;
 
 export class IconButton extends Component<IconButtonInterface> {
 
     private readonly invert: CSSProperties = {
-        "filter": `invert(${ this.props.invert === undefined || this.props.invert === true ? '100%' : '0%' })`
+        "filter": `invert(${this.props.invert === undefined || this.props.invert === true ? '100%' : '0%'})`
     }
 
     constructor(props: IconButtonInterface) {
@@ -16,11 +27,14 @@ export class IconButton extends Component<IconButtonInterface> {
 
     public render(): any {
         return (
-            <Ripples>
-                <button className="icon-button no-copy">
-                    <img style={this.invert} className="no-copy" src={this.props.icon} alt="icon" />
-                </button>
-            </Ripples>
+            <Fragment>
+                <Global />
+                <Ripples>
+                    <NoCopyIconButton>
+                        <img style={this.invert} src={this.props.icon} alt="icon" />
+                    </NoCopyIconButton>
+                </Ripples>
+            </Fragment>
         );
     }
 

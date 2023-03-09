@@ -1,7 +1,13 @@
 import { Component, CSSProperties, ReactElement } from "react";
+import styled from "styled-components";
 import { DividerIterface } from "../../interfaces/divider/divider.interface";
-import "./Divider.css";
 
+const StyledDivider = styled.div`
+    width: 100%;
+    height: 1px;
+    margin: 32px 0px;
+    display: block;
+`;
 export class Divider extends Component<DividerIterface> {
 
     private readonly backgroundColor: CSSProperties = {
@@ -15,7 +21,7 @@ export class Divider extends Component<DividerIterface> {
 
     public render(): ReactElement<any> {
         return (
-            <div className="divider" style={this.backgroundColor}></div>
+            <StyledDivider style={this.backgroundColor}></StyledDivider>
         );
     }
 

@@ -1,6 +1,24 @@
 import { Component, ReactElement } from "react";
+import styled from "styled-components";
+import { darkColor } from "../../../../assets/main/main";
 import { CenteredTitlesInteface } from "../../interfaces/centered-titles/cetered-titles.interface";
-import "./CenteredTitles.css";
+
+const CenteredDiv: any = styled.div`
+    padding: 30px 0px;
+`;
+
+const BigTitle: any = styled.h1`
+    text-align: center;
+    font-size: 3rem;
+    color: ${darkColor};
+`;
+
+const SubTitle: any = styled.h4`
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: ${darkColor};
+`;
 
 export class CenteredTitles extends Component<CenteredTitlesInteface> {
 
@@ -11,10 +29,10 @@ export class CenteredTitles extends Component<CenteredTitlesInteface> {
 
     public render(): ReactElement<any> {
         return (
-            <div className="centered-div">
-                {(this.props.title && this.props.title.length > 0) && <h1 className="big-centered-title">{this.props.title}</h1>}
-                {(this.props.subTitle && this.props.subTitle.length > 0) && <h4 className="sub-centered-title">{this.props.subTitle}</h4>}
-            </div>
+            <CenteredDiv>
+                {(this.props.title && this.props.title.length > 0) && <BigTitle>{this.props.title}</BigTitle>}
+                {(this.props.subTitle && this.props.subTitle.length > 0) && <SubTitle>{this.props.subTitle}</SubTitle>}
+            </CenteredDiv>
         );
     }
 

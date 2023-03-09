@@ -1,7 +1,12 @@
 import { Component, CSSProperties, ReactElement } from "react";
 import Ripples from "react-ripples";
+import styled from "styled-components";
+import { noCopy, StyledLink } from "../../../../assets/css/GlobalStyles";
 import { LinkInterface } from "../../interfaces/link/link.interface";
-import "./Link.css";
+
+const NoCopyLink = styled(StyledLink)`
+    ${noCopy}
+`;
 
 export class Link extends Component<LinkInterface> {
 
@@ -24,7 +29,7 @@ export class Link extends Component<LinkInterface> {
     public render(): ReactElement<any> {
         return (
             <Ripples>
-                <a  style={this.color} className="link no-copy" href={this.props.route ? this.props.route : ""} onClick={event => this.clickLink(event)}>{this.props.text}</a>
+                <NoCopyLink  style={this.color} href={this.props.route ? this.props.route : ""} onClick={event => this.clickLink(event)}>{this.props.text}</NoCopyLink>
             </Ripples>
         );
     }

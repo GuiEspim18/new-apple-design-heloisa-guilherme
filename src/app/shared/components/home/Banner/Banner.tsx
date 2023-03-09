@@ -1,7 +1,24 @@
 import { Component, ReactElement } from "react";
+import styled from "styled-components";
+import { Container } from "../../../../../assets/css/GlobalStyles";
+import { darkColor } from "../../../../../assets/main/main";
 import { BannerInterface } from "../../../interfaces/banner/banner.interface";
 import TextAndButtons from "../../../utils/TextAndButtons";
-import "./Banner.css";
+
+const StyledBanner: any = styled.section`
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    background-color: ${darkColor};
+`;
+
+const StyledContainer: any = styled(Container)`
+    display: flex;
+    align-items: center;
+    height: 100%;
+`;
 
 export class Banner extends Component<BannerInterface> {
 
@@ -29,11 +46,11 @@ export class Banner extends Component<BannerInterface> {
 
     public render(): ReactElement<any> {
         return (
-            <section className="banner" style={this.backgroundImage}>
-                <div className="container">
+            <StyledBanner style={this.backgroundImage}>
+                <StyledContainer>
                     <TextAndButtons littleTitle={this.littleTitle} title={this.title} list={this.list} />
-                </div>
-            </section>
+                </StyledContainer>
+            </StyledBanner>
         );
     }
 

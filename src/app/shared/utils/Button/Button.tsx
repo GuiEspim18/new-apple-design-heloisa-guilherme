@@ -1,7 +1,17 @@
 import { Component, Fragment, ReactElement } from "react"
 import Ripples from "react-ripples";
 import { ButtonInterface } from "../../interfaces/button/button.interface";
-import "./Button.css";
+import { StyledButton, BlueButton, noCopy } from "../../../../assets/css/GlobalStyles";
+import styled, { createGlobalStyle } from "styled-components";
+
+const SyledNoCopyButton = styled(StyledButton)`
+    ${noCopy}
+`
+const Local: any = createGlobalStyle`
+    .react-ripples{
+        border-radius: 5px !important;
+    }
+`;
 
 export class Button extends Component<ButtonInterface> {
 
@@ -13,10 +23,18 @@ export class Button extends Component<ButtonInterface> {
     public render(): ReactElement<any> {
         return (
             <Fragment>
+                <Local />
                 <Ripples>
-                    <button className={"button no-copy " + (this.props.expClass && this.props.expClass.length > 0 ? this.props.expClass : '')}>
-                        <p>{this.props.text}</p>
-                    </button>
+                    {(this.props.blueButton === undefined || this.props.blueButton === false) &&
+                        <SyledNoCopyButton>
+                            <p>{this.props.text}</p>
+                        </SyledNoCopyButton>
+                    }
+                    {(this.props.blueButton !== undefined || this.props.blueButton === true) &&
+                        <BlueButton>
+                            <p>{this.props.text}</p>
+                        </BlueButton>
+                    }
                 </Ripples>
             </Fragment>
         );
